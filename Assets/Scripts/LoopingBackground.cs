@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class LoopingBackground : MonoBehaviour
 {
     public float speed;
