@@ -7,24 +7,24 @@ public class PlayerObstacle : MonoBehaviour
    public float maxY;
    public float minX;
    public float minY;
-   public float timeSpawn;
-   private float spawnRate;
+   public float TimeBetweenSpawn;
+   private float SpawnTime;
    
    
     void Update()
     {
-        if (Time.time > timeSpawn)
+        if (Time.time > SpawnTime)
         {
             Spawn();
-            timeSpawn = Time.time + spawnRate;
+            SpawnTime = Time.time + TimeBetweenSpawn;
         }
     }
 
     void Spawn()
     {
-        float randomX = Random.Range(minX, maxX);
-        float randomY = Random.Range(minY, maxY);
+        float X = Random.Range(minX, maxX);
+        float Y = Random.Range(minY, maxY);
         
-        Instantiate(obstacle, transform.position + new Vector3(randomX, randomY, 0), transform.rotation);
+        Instantiate(obstacle, transform.position + new Vector3(X,Y, 0), transform.rotation);
     }
 }
