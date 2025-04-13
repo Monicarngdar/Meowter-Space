@@ -15,6 +15,11 @@ public class PlayerHealth : MonoBehaviour
       if (health < 0) health = 0;
 
       UpadatedHearts();
+
+      if (health == 0)
+      {
+         Destroy(gameObject);
+      }
    }
 
    private void UpadatedHearts()

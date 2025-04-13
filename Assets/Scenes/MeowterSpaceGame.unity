@@ -334,7 +334,7 @@ MonoBehaviour:
   maxY: 1
   minX: 0.5
   minY: -7.3
-  TimeBetweenSpawn: 2
+  TimeBetweenSpawn: 5
 --- !u!4 &171099402
 Transform:
   m_ObjectHideFlags: 0
@@ -908,6 +908,7 @@ GameObject:
   - component: {fileID: 1392200548}
   - component: {fileID: 1392200547}
   - component: {fileID: 1392200550}
+  - component: {fileID: 1392200551}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1017,6 +1018,25 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.5291238, y: 2.1822207}
   m_EdgeRadius: 0
+--- !u!114 &1392200551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392200546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6cea698bea68d24cab4352783df3d03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 3
+  hearts:
+  - {fileID: 1990945646}
+  - {fileID: 1816125917}
+  - {fileID: 436628957}
+  currentHeart: {fileID: -205270267638800340, guid: dcc11c50e5b3f32419f41a51a12259c0, type: 3}
+  damageHeart: {fileID: -4259435808610985122, guid: 41de2f4a83911574c8daa4299cbf6bf9, type: 3}
 --- !u!1 &1604023433
 GameObject:
   m_ObjectHideFlags: 0
@@ -1105,7 +1125,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1660660580}
   - component: {fileID: 1660660581}
-  - component: {fileID: 1660660582}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -1149,25 +1168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraSpeed: 3
---- !u!114 &1660660582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660660578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6cea698bea68d24cab4352783df3d03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 3
-  hearts:
-  - {fileID: 1990945646}
-  - {fileID: 1816125917}
-  - {fileID: 436628957}
-  currentHeart: {fileID: -205270267638800340, guid: dcc11c50e5b3f32419f41a51a12259c0, type: 3}
-  damageHeart: {fileID: -4259435808610985122, guid: 41de2f4a83911574c8daa4299cbf6bf9, type: 3}
 --- !u!1 &1816125914
 GameObject:
   m_ObjectHideFlags: 0
