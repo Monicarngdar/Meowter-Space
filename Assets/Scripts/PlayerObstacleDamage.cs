@@ -15,4 +15,6 @@ public class PlayerObstacleDamage : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+  
 }
