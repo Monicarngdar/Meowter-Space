@@ -33,7 +33,7 @@ public class PlayerCollectable : MonoBehaviour
             float y = Random.Range(minY, maxY);
             spawnPos = transform.position + new Vector3(x, y, 0);
 
-            if (Physics2D.OverlapCircle(spawnPos, coinDistance, obstacleMask))
+            if (!Physics2D.OverlapCircle(spawnPos, coinDistance, obstacleMask))
             {
                 Instantiate(collectable, spawnPos, Quaternion.identity);
                 return;
