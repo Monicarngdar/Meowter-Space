@@ -181,7 +181,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   maxY: 4
   minX: 0.5
   minY: -4
-  TimeBetweenSpawn: 2
+  TimeBetweenSpawn: 5
 --- !u!4 &171099402
 Transform:
   m_ObjectHideFlags: 0
@@ -751,7 +751,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &884192014
 Transform:
   m_ObjectHideFlags: 0
@@ -989,10 +989,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 3498122975552702864, guid: bf0418a2ef331e649951258aa7cbcb88, type: 3}
-  maxX: 2
-  maxY: 2
+  maxX: 1
+  maxY: 5
   minX: 4.4
-  minY: -4.45
+  minY: -5
   TimeBetweenSpawn: 5
 --- !u!4 &1029854958
 Transform:
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7983437cf3d71af4b94be916bf9addf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 4
+  playerSpeed: 5
   coinCollected: 0
   coinText: {fileID: 1424269659}
 --- !u!50 &1392200548
@@ -1248,7 +1248,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1424269658
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1429,7 +1429,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -1719,7 +1719,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
