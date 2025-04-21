@@ -5,15 +5,6 @@ TextureImporter:
   - first:
       213: 4147135921938402362
     second: laser out_0
-  - first:
-      213: -790639947750317900
-    second: laser out_1
-  - first:
-      213: -7000913519447312914
-    second: laser out_2
-  - first:
-      213: 7493624054409738336
-    second: laser out_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,9 +117,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 366
-        y: 2205
-        width: 616
-        height: 125
+        y: 1592
+        width: 2209
+        height: 1474
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,72 +130,6 @@ TextureImporter:
       bones: []
       spriteID: a3c866606269d8930800000000000000
       internalID: 4147135921938402362
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: laser out_1
-      rect:
-        serializedVersion: 2
-        x: 1101
-        y: 2205
-        width: 249
-        height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4b0eb1118251705f0800000000000000
-      internalID: -790639947750317900
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: laser out_2
-      rect:
-        serializedVersion: 2
-        x: 1469
-        y: 2205
-        width: 126
-        height: 125
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee5fc1a1f32c7de90800000000000000
-      internalID: -7000913519447312914
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: laser out_3
-      rect:
-        serializedVersion: 2
-        x: 1714
-        y: 1592
-        width: 861
-        height: 1474
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0683a63ef53bef760800000000000000
-      internalID: 7493624054409738336
       vertices: []
       indices: 
       edges: []
