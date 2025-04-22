@@ -11,11 +11,14 @@ public class LaserShoots : MonoBehaviour
         rb.linearVelocity = transform.right * speed;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+
+
+
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if(collision.gameObject.CompareTag("Asteroid"))
+        if (other.CompareTag("Asteroid"))
         {
-            Destroy(collision.gameObject);
+            Destroy(other.gameObject);
             Destroy(gameObject);
         }
     }

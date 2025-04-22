@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 171099401}
   m_Layer: 0
   m_Name: SpawnObstacle 2
-  m_TagString: Untagged
+  m_TagString: Asteroid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1102,6 +1102,37 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!1 &1273183148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1273183149}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1273183149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273183148}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.5, y: 1.1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1392200549}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1392200546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,6 +1146,7 @@ GameObject:
   - component: {fileID: 1392200547}
   - component: {fileID: 1392200550}
   - component: {fileID: 1392200551}
+  - component: {fileID: 1392200552}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1178,6 +1210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 317398027}
+  - {fileID: 1273183149}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1392200550
@@ -1245,6 +1278,20 @@ MonoBehaviour:
   - {fileID: 436628957}
   currentHeart: {fileID: -205270267638800340, guid: dcc11c50e5b3f32419f41a51a12259c0, type: 3}
   damageHeart: {fileID: -4259435808610985122, guid: 41de2f4a83911574c8daa4299cbf6bf9, type: 3}
+--- !u!114 &1392200552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392200546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 411775be1b5f69249aa7f571d319760d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoint: {fileID: 1273183149}
+  laserPrefab: {fileID: 7647072344298379919, guid: a79fee8b6da67e14a90465d7f16ae61e, type: 3}
 --- !u!1 &1424269657
 GameObject:
   m_ObjectHideFlags: 0
