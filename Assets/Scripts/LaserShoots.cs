@@ -4,7 +4,8 @@ public class LaserShoots : MonoBehaviour
 {
     public float speed;
     private Rigidbody2D rb;
-    
+
+    public GameObject particleEffect;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -18,6 +19,11 @@ public class LaserShoots : MonoBehaviour
     {
         if (other.CompareTag("Asteroid"))
         {
+
+            if (particleEffect != null)
+            {
+                Instantiate(particleEffect, transform.position, Quaternion.identity);
+            }
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
