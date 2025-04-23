@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SpeedManager : MonoBehaviour
 {
-    
+    //speed increases as the game progresses
     public static SpeedManager Instance;
     
     public float gameSpeed = 1f;

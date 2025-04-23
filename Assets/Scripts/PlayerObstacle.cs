@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class PlayerObstacle : MonoBehaviour
 {
+    //obstacles spawn in different direction as the gameplay progresses
    public GameObject obstacle;
    public float maxX;
    public float maxY;
