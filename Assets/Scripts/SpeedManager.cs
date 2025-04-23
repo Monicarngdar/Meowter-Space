@@ -5,24 +5,25 @@ public class SpeedManager : MonoBehaviour
     
     public static SpeedManager Instance;
     
-    public float gameSpeed = 5f;
-    public float increaseSpeed = 0.2f;
+    public float gameSpeed = 1f;
+    public float speedIncrease = 0.0005f;
+
+    private float speedIncreaseInterval =50f;
+    private float intialSpeed;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        if (Instance == null) Instance = this;
+        
     }
 
-    private void Update()
+     void Update()
     {
-        gameSpeed += increaseSpeed * Time.deltaTime;
+        if (Time.time > intialSpeed)
+        {
+            gameSpeed += speedIncrease;
+            intialSpeed = Time.time + speedIncreaseInterval;
+        }
     }
     
 }

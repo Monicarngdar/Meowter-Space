@@ -1686,8 +1686,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1d1d1245ff28f2b409fcb73bd123220f, type: 3}
-  m_Resource: {fileID: 8300000, guid: 1d1d1245ff28f2b409fcb73bd123220f, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -2080,6 +2080,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootingPoint: {fileID: 1273183149}
   laserPrefab: {fileID: 7647072344298379919, guid: a79fee8b6da67e14a90465d7f16ae61e, type: 3}
+  maxShoots: 3
+  coolDown: 20
 --- !u!1 &1424269657
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,6 +2306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1660660580}
   - component: {fileID: 1660660581}
+  - component: {fileID: 1660660582}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2344,6 +2347,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 803374931}
+--- !u!114 &1660660582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660660578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae26715edef96948badfd0efda84a51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameSpeed: 1
+  speedIncrease: 0.1
 --- !u!1 &1816125914
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f51acaeb5c776f47b1c50c8414d3c3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.2
+  speed: 0.1
   bgRenderer: {fileID: 1839008979}
 --- !u!23 &1839008979
 MeshRenderer:

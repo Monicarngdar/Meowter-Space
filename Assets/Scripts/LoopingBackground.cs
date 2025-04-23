@@ -10,6 +10,6 @@ public class LoopingBackground : MonoBehaviour
     
     void Update()
     {
-        bgRenderer.material.mainTextureOffset+= new Vector2(speed*Time.deltaTime, 0);
+        bgRenderer.material.mainTextureOffset+= new Vector2(SpeedManager.Instance.gameSpeed * Time.deltaTime, 0);
     }
 }
