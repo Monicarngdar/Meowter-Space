@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 public class ShootingEffect : MonoBehaviour
 {
     public Transform shootingPoint; 
@@ -11,6 +12,9 @@ public class ShootingEffect : MonoBehaviour
 
     private int shootsObstacle = 0;
     private bool isCoolDown = false;
+    
+    public TextMeshProUGUI laserTimer;
+    private float timer;
     void Update()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
@@ -26,6 +30,17 @@ public class ShootingEffect : MonoBehaviour
                 }
             }
           
+        }
+
+        if (isCoolDown)
+        {
+            timer -= Time.deltaTime;
+            laserTimer.text = "Timer: " + Mathf.Ceil(timer).ToString() + "s";
+        }
+
+        else
+        {
+            laserTimer.text = "";
         }
     }
 
