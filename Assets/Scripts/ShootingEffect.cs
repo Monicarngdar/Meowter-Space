@@ -38,8 +38,8 @@ public class ShootingEffect : MonoBehaviour
 
         if (isCoolDown)
         {
-            timer -= Time.deltaTime;
-            laserTimer.text = "Timer: " + Mathf.Ceil(timer).ToString() + "s";
+            timer = Time.deltaTime;
+            laserTimer.text = "Wait for: " + Mathf.Ceil(timer).ToString() + "s";
         }
 
         else
@@ -51,6 +51,7 @@ public class ShootingEffect : MonoBehaviour
     IEnumerator StartCoolDown()
     {
         isCoolDown = true;
+        timer = coolDown;
         yield return new WaitForSeconds(coolDown);
         shootsObstacle = 0;
         isCoolDown = false;

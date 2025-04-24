@@ -9,37 +9,26 @@ public class PlayerCollectable : MonoBehaviour
     public float minY;
     public float TimeBetweenSpawn;
     private float SpawnTime;
-
-    public float coinDistance; 
-    public LayerMask obstacleMask;
+    
 
     void Update()
     {
         if (Time.time > SpawnTime)
         {
-            SpawnCoinEvenly();
             SpawnTime = Time.time + TimeBetweenSpawn;
+            
+            Spawn();
         }
     }
 
-    void SpawnCoinEvenly()
+    void Spawn()
     {
-        Vector3 spawnPos;
-        int maxAttempts = 10;
-
-        for (int i = 0; i < maxAttempts; i++)
-        {
-            float x = Random.Range(minX, maxX);
-            float y = Random.Range(minY, maxY);
-            spawnPos = transform.position + new Vector3(x, y, 0);
-
-            if (!Physics2D.OverlapCircle(spawnPos, coinDistance, obstacleMask))
-            {
-                Instantiate(collectable, spawnPos, Quaternion.identity);
-                return;
-            }
-        }
+        float X = Random.Range(minX, maxX);
+        float Y = Random.Range(minY, maxY);
+        
+        Instantiate(collectable, transform.position + new Vector3(X,Y, 0), transform.rotation);
     }
+    
 }
     
  

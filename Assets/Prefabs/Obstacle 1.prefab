@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -4532518731083392252}
   - component: {fileID: 1768048138497790337}
   - component: {fileID: 2035261879214539961}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Obstacle 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1443104548616300404}
   - component: {fileID: 5083977025943481698}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Dead Fish
   m_TagString: Untagged
   m_Icon: {fileID: 0}
