@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Coin
   - Asteroid
+  - Laser
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Enemy
+  - Player
   - Obstacle
   - Asteroid
   - 

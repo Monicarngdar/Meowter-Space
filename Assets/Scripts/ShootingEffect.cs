@@ -38,8 +38,8 @@ public class ShootingEffect : MonoBehaviour
 
         if (isCoolDown)
         {
-            timer = Time.deltaTime;
-            laserTimer.text = "Wait for: " + Mathf.Ceil(timer).ToString() + "s";
+            timer -= Time.deltaTime;
+            laserTimer.text = "Reloading: " + Mathf.Ceil(timer).ToString() + "s";
         }
 
         else

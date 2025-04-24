@@ -5,10 +5,10 @@ public class SpeedManager : MonoBehaviour
     //speed increases as the game progresses
     public static SpeedManager Instance;
     
-    public float gameSpeed = 1f;
-    public float speedIncrease = 0.0005f;
+    public float gameSpeed;
+    public float speedIncrease;
 
-    private float speedIncreaseInterval =50f;
+    private float speedIncreaseInterval = 10f;
     private float intialSpeed;
 
     private void Awake()

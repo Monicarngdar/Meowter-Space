@@ -10,6 +10,22 @@ public class PlayerHealth : MonoBehaviour
    public Sprite currentHeart;
    public Sprite damageHeart;
 
+  private Animator animator;
+
+   void Awake()
+   {
+      animator = GetComponent<Animator>();
+      health = 3;
+   }
+
+   void OnCollisionEnter2D(Collision2D other)
+   {
+      if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+      {
+         StartCoroutine(PlayerHurt());
+      }
+   }
+   
  public void TakeDamage(int amount)
    {
       health -= amount;
@@ -20,6 +36,10 @@ public class PlayerHealth : MonoBehaviour
       if (health == 0)
       {
          Destroy(gameObject);
+      }
+      
+      else{
+         StartCoroutine(PlayerHurt());
       }
    }
 
@@ -34,5 +54,24 @@ public class PlayerHealth : MonoBehaviour
       }
    }
 
+  
+   IEnumerator PlayerHurt()
+   {
+      Animator animator = GetComponent<Animator>();
+      
+      if (animator != null)
+      {
+         animator.SetLayerWeight(1, 1);
+      }
+      
+      Physics2D.IgnoreLayerCollision(6, 8);
+      yield return new WaitForSeconds(3);
+      Physics2D.IgnoreLayerCollision(6, 8, false);
+
+      if (animator != null)
+      {
+         animator.SetLayerWeight(1, 0);
+      }
+   }
    
 }
