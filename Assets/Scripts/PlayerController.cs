@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     public int coinCollected = 0;
     public TextMeshProUGUI coinText;
     
-    public GameObject smokeEffect;
+  
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Asteroid"))
         {
-            ObstacleHitSmokeEffect();
+          
         }
         
         
@@ -44,10 +44,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void ObstacleHitSmokeEffect()
-    {
-        GameObject smoke = Instantiate(smokeEffect, transform.position, Quaternion.identity); 
-        
-        Destroy(smoke, 1f);
-    }
+   
 }

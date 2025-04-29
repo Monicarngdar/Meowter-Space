@@ -363,7 +363,8 @@ GameObject:
   m_Component:
   - component: {fileID: 317398027}
   - component: {fileID: 317398028}
-  m_Layer: 0
+  - component: {fileID: 317398029}
+  m_Layer: 7
   m_Name: Cat Spaceship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,6 +441,28 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &317398029
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317398026}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 32ca126cc4075f1448f1a1d1b82db7eb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &354206358
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +891,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Timer:'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d496c5ff706fdb049a2e4bc614e730b4, type: 2}
   m_sharedMaterial: {fileID: -3146878548459326435, guid: d496c5ff706fdb049a2e4bc614e730b4, type: 2}
@@ -1789,26 +1812,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1164381326}
   - component: {fileID: 1164381325}
-  - component: {fileID: 1164381324}
   m_Layer: 0
-  m_Name: Background Music
+  m_Name: BGM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1164381324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164381323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd62ddcaf0f05984b9d581dd60d25817, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!82 &1164381325
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1819,8 +1829,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0ad591428b0c18c4da51fe3bf98dbc63, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0ad591428b0c18c4da51fe3bf98dbc63, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1934,7 +1944,7 @@ GameObject:
   - component: {fileID: 1255339967}
   - component: {fileID: 1255339966}
   m_Layer: 5
-  m_Name: Pop Up Panel
+  m_Name: Game Over Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2090,7 +2100,6 @@ MonoBehaviour:
   playerSpeed: 5
   coinCollected: 0
   coinText: {fileID: 1424269659}
-  smokeEffect: {fileID: 0}
 --- !u!50 &1392200548
 Rigidbody2D:
   serializedVersion: 5
@@ -2573,8 +2582,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aae26715edef96948badfd0efda84a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameSpeed: 0.4
-  speedIncrease: 0.7
+  gameSpeed: 0.3
+  speedIncrease: 0.1
 --- !u!1 &1816125914
 GameObject:
   m_ObjectHideFlags: 0
