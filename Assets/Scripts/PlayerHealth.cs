@@ -18,6 +18,14 @@ public class PlayerHealth : MonoBehaviour
       health = 3;
    }
 
+   private void OnTriggerEnter(Collider other)
+   {
+      if (other.tag == "Asteroid")
+      {
+         TakeDamage(1);
+      }
+   }
+
    void OnCollisionEnter2D(Collision2D other)
    {
       if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
