@@ -10,7 +10,7 @@ public class PlayerHealth : MonoBehaviour
    public Sprite currentHeart;
    public Sprite damageHeart;
 
-  private Animator animator;
+   private Animator animator;
 
    void Awake()
    {
@@ -57,21 +57,14 @@ public class PlayerHealth : MonoBehaviour
   
    IEnumerator PlayerHurt()
    {
-      Animator animator = GetComponent<Animator>();
-      
       if (animator != null)
       {
-         animator.SetLayerWeight(1, 1);
+         animator.SetTrigger("Hurt");
       }
       
       Physics2D.IgnoreLayerCollision(6, 8);
-      yield return new WaitForSeconds(3);
+      yield return new WaitForSeconds(2);
       Physics2D.IgnoreLayerCollision(6, 8, false);
-
-      if (animator != null)
-      {
-         animator.SetLayerWeight(1, 0);
-      }
    }
    
 }
