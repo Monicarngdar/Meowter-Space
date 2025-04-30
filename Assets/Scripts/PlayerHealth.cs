@@ -4,17 +4,31 @@ using UnityEngine;
 using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
+   //Total health of player and using a sprite to display the health bar
+   [Header("Health Variables")]
    public int health = 3;
    public Image[] hearts;
-   
    public Sprite currentHeart;
    public Sprite damageHeart;
 
+   //Animatio Variable
    private Animator animator;
 
+   //Audio Variable
+   [Header("Audio")]
+   public AudioClip healthDamageSound;
+   private AudioSource audioSource;
+   
    void Awake()
    {
       animator = GetComponent<Animator>();
+      audioSource = GetComponent<AudioSource>();
+
+      if (audioSource == null)
+      {
+         audioSource = gameObject.AddComponent<AudioSource>();
+      }
+      
       health = 3;
    }
 
@@ -41,6 +55,12 @@ public class PlayerHealth : MonoBehaviour
 
       UpadatedHearts();
 
+      if (healthDamageSound != null && audioSource != null)
+      {
+         audioSource.PlayOneShot(healthDamageSound);
+      }
+
+      
       if (health == 0)
       {
          Destroy(gameObject);

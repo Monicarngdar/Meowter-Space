@@ -3,7 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerGameOver : MonoBehaviour
 {
+    //Add the game over screen panel
     public GameObject  gameOverPanel;
+    
    
     void Update()
     {

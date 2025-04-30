@@ -25,18 +25,14 @@ public class LaserShoots : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (hitFireSound != null)
-            AudioSource.PlayClipAtPoint(hitFireSound, transform.position);
-        
-        
-        
         if (other.CompareTag("Asteroid"))
         {
+            if (hitFireSound != null)
+                AudioSource.PlayClipAtPoint(hitFireSound, transform.position);
 
             if (particleEffect != null)
-            {
                 Instantiate(particleEffect, transform.position, Quaternion.identity);
-            }
+            
             Destroy(other.gameObject);
             Destroy(gameObject);
         }
