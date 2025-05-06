@@ -333,8 +333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 2130980490225865919, guid: 1d98e3e18e9e25643a52d58d380d8205, type: 3}
-  maxX: 1
-  maxY: 4
+  maxX: 3
+  maxY: 5
   minX: 0.5
   minY: -4
   TimeBetweenSpawn: 2
@@ -1254,7 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collectable: {fileID: 1915661428076290534, guid: e2420499ada882545ae3dddb9231cb2b, type: 3}
   maxX: 1
-  maxY: 1
+  maxY: 3
   minX: 3
   minY: -4
   TimeBetweenSpawn: 3
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacle: {fileID: 3498122975552702864, guid: bf0418a2ef331e649951258aa7cbcb88, type: 3}
-  maxX: 1
+  maxX: 3
   maxY: 5
   minX: 4.4
   minY: -5
@@ -1574,7 +1574,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1128533285}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1660660581}
+        m_TargetAssemblyTypeName: PlayerGameOver, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1128533285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1719,12 +1731,12 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 35967e8a4dfb1664e9b066939272c0a4, type: 3}
+  m_Resource: {fileID: 8300000, guid: 35967e8a4dfb1664e9b066939272c0a4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.092
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3073,6 +3085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1422965548089494922, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4225763765655417458, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
       propertyPath: 'hearts.Array.data[0]'
       value: 
@@ -3092,8 +3108,35 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1422965548089494922, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 539954039918323304}
   m_SourcePrefab: {fileID: 100100000, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+--- !u!1 &539954039918323303 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422965548089494922, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+  m_PrefabInstance: {fileID: 539954039918323302}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &539954039918323304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539954039918323303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd57c1bbd135fa4fb24e3f35f787d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDB: {fileID: 11400000, guid: 1b50ea7781133e945a96de0dbf7a1a59, type: 2}
+  catSprite: {fileID: 539954039918323305}
+--- !u!212 &539954039918323305 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5032064660620013864, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+  m_PrefabInstance: {fileID: 539954039918323302}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3181739337163694587
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3145,6 +3188,10 @@ PrefabInstance:
     - target: {fileID: 1594144315628018398, guid: d616f9c026582354c983ad2c4b64c443, type: 3}
       propertyPath: m_Name
       value: Player 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1594144315628018398, guid: d616f9c026582354c983ad2c4b64c443, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2568282116663443971, guid: d616f9c026582354c983ad2c4b64c443, type: 3}
       propertyPath: laserTimer
@@ -3226,6 +3273,10 @@ PrefabInstance:
     - target: {fileID: 5258069302587686741, guid: 1a21a2585a1f8a14e98c55ed4af545f8, type: 3}
       propertyPath: m_Name
       value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5258069302587686741, guid: 1a21a2585a1f8a14e98c55ed4af545f8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6256654899669939440, guid: 1a21a2585a1f8a14e98c55ed4af545f8, type: 3}
       propertyPath: coinText
