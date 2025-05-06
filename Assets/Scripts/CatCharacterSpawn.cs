@@ -16,7 +16,7 @@ public class CatCharacterSpawn : MonoBehaviour
 
         else
         {
-            Load();
+          Load();
         }
         
         UpdateCat(selectedCat);
@@ -30,7 +30,7 @@ public class CatCharacterSpawn : MonoBehaviour
 
     private void Load()
     {
-        selectedCat = PlayerPrefs.GetInt("selectedCat");
+        selectedCat = PlayerPrefs.GetInt("SelectedCat");
     }
    
 }

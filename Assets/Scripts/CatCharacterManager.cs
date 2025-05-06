@@ -20,7 +20,7 @@ public class CatCharacterManager : MonoBehaviour
 
         else
         {
-            Load();
+           Load();
         }
         
         UpdateCat(selectedCat);
@@ -61,7 +61,7 @@ public class CatCharacterManager : MonoBehaviour
 
     private void Load()
     {
-        selectedCat = PlayerPrefs.GetInt("selectedCat");
+        selectedCat = PlayerPrefs.GetInt("SelectedCat");
     }
 
     private void Save()
