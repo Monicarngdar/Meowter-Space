@@ -197,25 +197,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 18, y: 1}
   m_EdgeRadius: 0
---- !u!1 &42146372 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1422965548089494922, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+--- !u!212 &95853824 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5032064660620013864, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
   m_PrefabInstance: {fileID: 539954039918323302}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &42146373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 42146372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fd57c1bbd135fa4fb24e3f35f787d0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterDB: {fileID: 11400000, guid: 1b50ea7781133e945a96de0dbf7a1a59, type: 2}
-  catSprite: {fileID: 1800557657}
 --- !u!1 &122341147
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +433,81 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1660660580}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &205024964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 205024965}
+  - component: {fileID: 205024967}
+  - component: {fileID: 205024966}
+  m_Layer: 5
+  m_Name: Dark Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &205024965
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205024964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 631769136}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 1.3995361, y: -2.7494507}
+  m_SizeDelta: {x: 246.7991, y: 543.4989}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &205024966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205024964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &205024967
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205024964}
+  m_CullTransparentMesh: 1
 --- !u!1 &354206358
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,8 +888,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 631769136}
+  - component: {fileID: 631769137}
   m_Layer: 5
-  m_Name: Pause Menu
+  m_Name: PauseMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -846,10 +908,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 205024965}
   - {fileID: 122610095}
   - {fileID: 1862420727}
-  - {fileID: 1182234762}
   - {fileID: 1721876665}
+  - {fileID: 1182234762}
   - {fileID: 1287586524}
   m_Father: {fileID: 1924937184}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -858,6 +921,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 900, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &631769137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631769135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1032a91dbfb844d40b159570d89f6491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseGamePanel: {fileID: 631769135}
 --- !u!1 &669930661
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,7 +968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 148, y: -52}
+  m_AnchoredPosition: {x: 183, y: -52}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669930663
@@ -1759,7 +1835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 39, y: -34}
+  m_AnchoredPosition: {x: 39, y: -49}
   m_SizeDelta: {x: 60, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1114597677
@@ -1806,13 +1882,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1924937180}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 631769137}
+        m_TargetAssemblyTypeName: PlayerPauseMenu, Assembly-CSharp
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2476,9 +2552,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1660660581}
-        m_TargetAssemblyTypeName: PlayerGameOver, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 631769137}
+        m_TargetAssemblyTypeName: PlayerPauseMenu, Assembly-CSharp
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2539,7 +2615,7 @@ GameObject:
   - component: {fileID: 1255339967}
   - component: {fileID: 1255339966}
   m_Layer: 5
-  m_Name: Game Over Panel
+  m_Name: Game Over Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2809,8 +2885,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1660660581}
-        m_TargetAssemblyTypeName: PlayerGameOver, Assembly-CSharp
+      - m_Target: {fileID: 631769137}
+        m_TargetAssemblyTypeName: PlayerPauseMenu, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -3299,6 +3375,7 @@ GameObject:
   - component: {fileID: 1660660581}
   - component: {fileID: 1660660582}
   - component: {fileID: 1660660583}
+  - component: {fileID: 1660660584}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3340,7 +3417,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 803374931}
-  gameOverSound: {fileID: 0}
   buttonClickSound: {fileID: 8300000, guid: 141b984e459bc422c8c0e500b4f52d92, type: 3}
 --- !u!114 &1660660582
 MonoBehaviour:
@@ -3453,6 +3529,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1660660584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660660578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1032a91dbfb844d40b159570d89f6491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseGamePanel: {fileID: 631769135}
 --- !u!1 &1664020015
 GameObject:
   m_ObjectHideFlags: 0
@@ -3770,9 +3859,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1660660581}
-        m_TargetAssemblyTypeName: PlayerGameOver, Assembly-CSharp
-        m_MethodName: Restart
+      - m_Target: {fileID: 631769137}
+        m_TargetAssemblyTypeName: PlayerPauseMenu, Assembly-CSharp
+        m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3820,11 +3909,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1721876664}
   m_CullTransparentMesh: 1
---- !u!212 &1800557657 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 5032064660620013864, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
+--- !u!1 &1802846016 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1422965548089494922, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
   m_PrefabInstance: {fileID: 539954039918323302}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1802846017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802846016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fd57c1bbd135fa4fb24e3f35f787d0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterDB: {fileID: 11400000, guid: 1b50ea7781133e945a96de0dbf7a1a59, type: 2}
+  catSprite: {fileID: 95853824}
 --- !u!1 &1816125914
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,7 +4251,7 @@ GameObject:
   - component: {fileID: 1862420729}
   - component: {fileID: 1862420728}
   m_Layer: 5
-  m_Name: GameOver Text
+  m_Name: Paused Game Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4363,7 +4466,7 @@ GameObject:
   - component: {fileID: 1924937182}
   - component: {fileID: 1924937181}
   m_Layer: 5
-  m_Name: Pause Game Panel
+  m_Name: Pause Game Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4920,7 +5023,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1422965548089494922, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 42146373}
+      addedObject: {fileID: 1802846017}
   m_SourcePrefab: {fileID: 100100000, guid: 6e5a800cc5b4d5c45ae5870fa8b01efe, type: 3}
 --- !u!1001 &3181739337163694587
 PrefabInstance:

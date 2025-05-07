@@ -15,7 +15,10 @@ MonoBehaviour:
   character:
   - characterName: Willow
     characterSprite: {fileID: 2800000, guid: 163a92bb16311bd43b02960a04eccc90, type: 3}
+    catSpaceSprite: {fileID: -3939970783975689677, guid: 163a92bb16311bd43b02960a04eccc90, type: 3}
   - characterName: Mochi
     characterSprite: {fileID: 2800000, guid: 969accb3bd7bd154da91d3b8b8706e09, type: 3}
+    catSpaceSprite: {fileID: 1643842914456978753, guid: 969accb3bd7bd154da91d3b8b8706e09, type: 3}
   - characterName: Clover
     characterSprite: {fileID: 2800000, guid: 709a835e3ad052d45b9f3365493aea9c, type: 3}
+    catSpaceSprite: {fileID: -6614506051146424148, guid: 709a835e3ad052d45b9f3365493aea9c, type: 3}

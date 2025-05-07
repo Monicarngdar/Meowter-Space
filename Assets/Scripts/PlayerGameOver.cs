@@ -6,11 +6,10 @@ public class PlayerGameOver : MonoBehaviour
     //Add the game over screen panel
     public GameObject  gameOverPanel;
     
-    public AudioClip gameOverSound;
     public AudioClip buttonClickSound;
     private AudioSource audioSource;
 
-
+   //Audio Variable
     void Start()
     {
         audioSource = GetComponent<AudioSource>();

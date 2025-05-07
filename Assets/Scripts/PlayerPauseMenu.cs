@@ -5,7 +5,7 @@ public class PlayerPauseMenu : MonoBehaviour
 {
     //Reference to the UI element
  public GameObject pauseGamePanel;
-
+ 
  //When game is paused, the panel shows upn and freezes the game
    public void PauseGame()
    {

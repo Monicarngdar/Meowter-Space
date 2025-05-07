@@ -15,14 +15,9 @@ public class CatCharacterManager : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("SelectedCat"))
         {
-            selectedCat = 0;
-        }
-
-        else
-        {
            Load();
         }
-        
+       
         UpdateCat(selectedCat);
     }
 

@@ -11,14 +11,9 @@ public class CatCharacterSpawn : MonoBehaviour
     {
         if(PlayerPrefs.HasKey("SelectedCat"))
         {
-            selectedCat = 0;
+            Load();
         }
-
-        else
-        {
-          Load();
-        }
-        
+       
         UpdateCat(selectedCat);
     }
     
