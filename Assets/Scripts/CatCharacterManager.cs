@@ -13,6 +13,7 @@ public class CatCharacterManager : MonoBehaviour
     private int selectedCat = 0;
     void Start()
     {
+        //Saves the character selection 
         if(PlayerPrefs.HasKey("SelectedCat"))
         {
            Load();
@@ -21,6 +22,7 @@ public class CatCharacterManager : MonoBehaviour
         UpdateCat(selectedCat);
     }
 
+    //Next button when choosing a character, it loops back to the other characters
     public void NextOption()
     {
         selectedCat++;
@@ -34,6 +36,7 @@ public class CatCharacterManager : MonoBehaviour
         Save();
     }
 
+    //Prev button when choosing a character, it loops back to the other characters
     public void PrevOption()
     {
         selectedCat--;
@@ -47,6 +50,7 @@ public class CatCharacterManager : MonoBehaviour
         Save();
     }
 
+    //Updates the characters name and image
     private void UpdateCat(int selectedCat)
     {
         CatCharacter catCharacter = characterDB.GetCatCharacter(selectedCat);
@@ -54,11 +58,13 @@ public class CatCharacterManager : MonoBehaviour
         nameText.text = catCharacter.characterName;
     }
 
+    //Loads the character from the prefab
     private void Load()
     {
         selectedCat = PlayerPrefs.GetInt("SelectedCat");
     }
 
+    //Selects the character from the prefab
     private void Save()
     {
         PlayerPrefs.SetInt("SelectedCat", selectedCat);

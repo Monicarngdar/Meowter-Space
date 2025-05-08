@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
       
       health = 3;
    }
-
+   
    private void OnTriggerEnter(Collider other)
    {
       if (other.tag == "Asteroid")
