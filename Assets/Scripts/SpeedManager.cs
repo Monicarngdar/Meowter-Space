@@ -9,20 +9,29 @@ public class SpeedManager : MonoBehaviour
     public float speedIncrease;
 
     private float speedIncreaseInterval = 10f;
-    private float intialSpeed;
-
+    private float nextspeedIncrease = 0f;
+   
     private void Awake()
     {
-        if (Instance == null) Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
         
+    }
+
+    void Start()
+    {
+        nextspeedIncrease = Time.time + speedIncrease;
     }
 
      void Update()
     {
-        if (Time.time > intialSpeed)
+        if (Time.time >= nextspeedIncrease)
+            
         {
             gameSpeed += speedIncrease;
-            intialSpeed = Time.time + speedIncreaseInterval;
+            nextspeedIncrease = Time.time + speedIncreaseInterval;
         }
     }
     
