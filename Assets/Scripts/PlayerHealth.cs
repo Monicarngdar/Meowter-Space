@@ -6,12 +6,12 @@ public class PlayerHealth : MonoBehaviour
 {
    //Total health of player and using a sprite to display the health bar
    [Header("Health Variables")]
-   public int health = 3;
-   public Image[] hearts;
-   public Sprite currentHeart;
-   public Sprite damageHeart;
+   public int health = 3; //Total health of player
+   public Image[] hearts; //to display amount of hearts
+   public Sprite currentHeart; //Full heart sprite
+   public Sprite damageHeart; //Damage heart sprite
 
-   //Animatio Variable
+   //Animation Variable for the hurt animation
    private Animator animator;
 
    //Audio Variable
@@ -21,17 +21,18 @@ public class PlayerHealth : MonoBehaviour
    
    void Awake()
    {
-      animator = GetComponent<Animator>();
-      audioSource = GetComponent<AudioSource>();
+      animator = GetComponent<Animator>();//Gets the animation component
+      audioSource = GetComponent<AudioSource>();//Audio source to be placed
 
       if (audioSource == null)
       {
-         audioSource = gameObject.AddComponent<AudioSource>();
+         audioSource = gameObject.AddComponent<AudioSource>(); //Gets the audio source component
       }
       
-      health = 3;
+      health = 3; //Player health initial to 3
    }
    
+   //This method calls te collider when it is triggered that is attached to the object
    private void OnTriggerEnter(Collider other)
    {
       if (other.tag == "Asteroid")
@@ -39,60 +40,62 @@ public class PlayerHealth : MonoBehaviour
          TakeDamage(1);
       }
    }
-
+  //Detects when the player is collided
    void OnCollisionEnter2D(Collision2D other)
    {
       if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
       {
-         StartCoroutine(PlayerHurt());
+         StartCoroutine(PlayerHurt()); //Player animation starts when the player gets hit by an obstacle
       }
    }
    
+   //applies damage to the player
  public void TakeDamage(int amount)
    {
-      health -= amount;
-      if (health < 0) health = 0;
+      health -= amount; //Decrease amount of health
+      if (health < 0) health = 0; //Ensure health does not go below zero
 
-      UpadatedHearts();
+      UpdatedHearts(); //Updates the current hearts
 
-      if (healthDamageSound != null && audioSource != null)
+      if (healthDamageSound != null && audioSource != null) 
       {
-         audioSource.PlayOneShot(healthDamageSound);
+         audioSource.PlayOneShot(healthDamageSound); //Sound effect
       }
 
       
-      if (health == 0)
+      if (health == 0) //if health zero, it destroys the player
       {
          Destroy(gameObject);
       }
       
       else{
-         StartCoroutine(PlayerHurt());
+         StartCoroutine(PlayerHurt()); //Starts the hurt animation when player gets hit by an obstacle
       }
    }
 
-   private void UpadatedHearts()
+  //Updates the heart icons 
+   private void UpdatedHearts()
    {
       for (int i = 0; i < hearts.Length; i++)
       {
          if (i < health)
-            hearts[i].sprite = currentHeart;
+            hearts[i].sprite = currentHeart; //sets it into the player heart remaining 
          else 
-            hearts[i].sprite = damageHeart;
+            hearts[i].sprite = damageHeart; //sets to damage heart
       }
    }
 
-  
+   //Coroutine to play the PlayerHurt animation  
    IEnumerator PlayerHurt()
    {
       if (animator != null)
       {
-         animator.SetTrigger("Hurt");
+         animator.SetTrigger("Hurt"); //Triggers the Hurt animation 
       }
       
-      Physics2D.IgnoreLayerCollision(6, 8);
-      yield return new WaitForSeconds(2);
-      Physics2D.IgnoreLayerCollision(6, 8, false);
+      Physics2D.IgnoreLayerCollision(6, 8); //Temporarily ignores the other collision when the player is hurt
+      yield return new WaitForSeconds(2); //Time that the animation is set
+      Physics2D.IgnoreLayerCollision(6, 8, false); //Re-enables it again when collided
    }
    
 }

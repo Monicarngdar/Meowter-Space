@@ -4,50 +4,53 @@ using UnityEngine.UI;
 
 public class CatCharacterManager : MonoBehaviour
 {
-  
+   //To attach the CharacterDatabase
     public CharacterDatabase characterDB;
-    
+    //Name of the character
     public TextMeshProUGUI nameText;
+    //Characters sprite
     public RawImage catSprite;
     
+    //Sets as a  prefab to change the character
     private int selectedCat = 0;
     void Start()
     {
         //Saves the character selection 
         if(PlayerPrefs.HasKey("SelectedCat"))
         {
-           Load();
+           Load(); //Loads the save character selected
         }
        
-        UpdateCat(selectedCat);
+        UpdateCat(selectedCat); //Updates the character and name 
     }
 
     //Next button when choosing a character, it loops back to the other characters
     public void NextOption()
     {
-        selectedCat++;
+        selectedCat++; //to click next
 
         if (selectedCat >= characterDB.CharacterCount)
         {
             selectedCat = 0;
         }
 
-        UpdateCat(selectedCat);
-        Save();
+        UpdateCat(selectedCat); //Updates the character selected
+        Save(); //Saves it
     }
 
     //Prev button when choosing a character, it loops back to the other characters
     public void PrevOption()
     {
-        selectedCat--;
+        selectedCat--; //to go back
 
+        //loops nack to the start
         if (selectedCat < 0)
         {
             selectedCat = characterDB.CharacterCount - 1;
         }
         
-        UpdateCat(selectedCat);
-        Save();
+        UpdateCat(selectedCat);  //Updates the character selected
+        Save(); //Saves it
     }
 
     //Updates the characters name and image

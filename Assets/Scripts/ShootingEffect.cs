@@ -1,33 +1,34 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using TMPro;
+using UnityEngine.InputSystem; //handling input
+using TMPro; //Text mesh pro for text
 public class ShootingEffect : MonoBehaviour
 {
-    //Allows the player to shoot to kill the Asteroids
+    //Laser Variables
     [Header("Laser Variable")]
-    public Transform shootingPoint; 
-    public GameObject laserPrefab;
+    public Transform shootingPoint; //Position of when the laser is spawned
+    public GameObject laserPrefab; //Prefab of the laser
 
-    // Is limited to only 3 every 10 seconds
-    [Header("Colldown")]
-    public int maxShoots = 3;
-    public float coolDown = 10f;
-    private int shootsObstacle = 0;
-    private bool isCoolDown = false;
+    //Cooldown Variables
+    [Header("Cooldown")]
+    public int maxShoots = 3; //limited to 3 shots
+    public float coolDown = 10f; //every 10 seconds the laser reloads
+    private int shootsObstacle = 0;//tracks when the laser is shot
+    private bool isCoolDown = false; //checks if the cooldown is active
     
     // text to display the timer
     [Header("Laser Text")]
-    public TextMeshProUGUI laserTimer;
-    private float timer;
+    public TextMeshProUGUI laserTimer; //UI to show the text
+    private float timer; //for the countdown
 
     //Audio Variables
     [Header("Audio")]
-    public AudioClip shootSound;
+    public AudioClip shootSound; 
     private AudioSource audioSource;
 
     void Start()
     {
+        //Get the audio source component to attached to the game object
         audioSource = GetComponent<AudioSource>();
     }
     
@@ -36,6 +37,7 @@ public class ShootingEffect : MonoBehaviour
         //Uses space bar to shoot
         if (Keyboard.current.spaceKey.wasPressedThisFrame)
         {
+            //Ensures the player does not exceed the amount for shots
             if (shootsObstacle < maxShoots)
             {
                 //The project file of laser
@@ -47,8 +49,10 @@ public class ShootingEffect : MonoBehaviour
                     audioSource.PlayOneShot(shootSound);
                 }
                 
+                //shot counter
                 shootsObstacle++;
-
+                
+                //If max shot has been used the cooldown timer starts
                 if (shootsObstacle == maxShoots)
                 {
                     StartCoroutine(StartCoolDown());
@@ -60,23 +64,23 @@ public class ShootingEffect : MonoBehaviour
         //Shows the reloading text
         if (isCoolDown)
         {
-            timer -= Time.deltaTime;
-            laserTimer.text = "Reloading: " + Mathf.Ceil(timer).ToString() + "s";
+            timer -= Time.deltaTime; //Decreases timer each time
+            laserTimer.text = "Reloading: " + Mathf.Ceil(timer).ToString() + "s"; //Shows the remaining time
         }
 
         else
         {
-            laserTimer.text = "";
+            laserTimer.text = ""; //Hides it when not needed
         }
     }
     
     //Starts the timer after shooting the laser and waits for 10 seconds before shooting again
     IEnumerator StartCoolDown()
     {
-        isCoolDown = true;
-        timer = coolDown;
-        yield return new WaitForSeconds(coolDown);
-        shootsObstacle = 0;
-        isCoolDown = false;
+        isCoolDown = true; //Starts the cooldown
+        timer = coolDown; //The timer
+        yield return new WaitForSeconds(coolDown); //Wait for seconds for the cooldown
+        shootsObstacle = 0; //Resets the cooldown
+        isCoolDown = false; //End of cooldown
     }
 }

@@ -12,10 +12,10 @@ public class CatCharacterSpawn : MonoBehaviour
         //Saves the character selection 
         if(PlayerPrefs.HasKey("SelectedCat"))
         {
-            Load();
+            Load(); //Loads the save character selected
         }
        
-        UpdateCat(selectedCat);
+        UpdateCat(selectedCat); //Updates the character and name
     }
     
     //Updates the character 

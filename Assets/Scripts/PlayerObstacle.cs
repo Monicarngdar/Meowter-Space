@@ -2,27 +2,31 @@ using UnityEngine;
 
 public class PlayerObstacle : MonoBehaviour
 {
-    //obstacles spawn in different direction as the gameplay progresses
-   public GameObject obstacle;
+    //to place the object
+   public GameObject obstacle; 
+   //obstacles spawn in different direction as the gameplay progresses
    public float maxX;
    public float maxY;
    public float minX;
    public float minY;
-   public float TimeBetweenSpawn;
+   //The obstacle spawns depending on the time
+   public float TimeBetweenSpawn; 
    private float SpawnTime;
    
    
     void Update()
     {
+        //Checks if the time is spawned
         if (Time.time > SpawnTime)
         {
-            Spawn();
-            SpawnTime = Time.time + TimeBetweenSpawn;
+            Spawn(); //Calls out the Spawn method 
+            SpawnTime = Time.time + TimeBetweenSpawn; //Sets the next spawn time
         }
     }
 
     void Spawn()
     {
+        //Randomly spawns the obstacles within the specific range mentioned
         float X = Random.Range(minX, maxX);
         float Y = Random.Range(minY, maxY);
         

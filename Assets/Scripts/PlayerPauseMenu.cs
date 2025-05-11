@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; //loads the scene
 
 public class PlayerPauseMenu : MonoBehaviour
 {

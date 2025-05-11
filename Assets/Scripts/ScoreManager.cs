@@ -1,5 +1,5 @@
 using UnityEngine;
-using TMPro; 
+using TMPro; //Text mesh pro for text
 public class ScoreManager : MonoBehaviour
 {
     //Reference to the UI element

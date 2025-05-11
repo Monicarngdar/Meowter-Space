@@ -17,23 +17,26 @@ public class LaserShoots : MonoBehaviour
     private AudioSource audioSource;
     void Start()
     {
+        //Gets the Rigidbody2D attached to the object
         rb = GetComponent<Rigidbody2D>();
+        //Sets the linearVelocity of the Rigidbody2D in the direction and speed
         rb.linearVelocity = transform.right * speed;
     }
 
-    
+    //This method calls te collider when it is triggered that is attached to the object
     private void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (other.CompareTag("Asteroid"))
+        if (other.CompareTag("Asteroid")) //If the asteroid has a tag 
         {
             if (hitFireSound != null)
-                AudioSource.PlayClipAtPoint(hitFireSound, transform.position);
+                AudioSource.PlayClipAtPoint(hitFireSound, transform.position); //Audio played when hit
 
             if (particleEffect != null)
-                Instantiate(particleEffect, transform.position, Quaternion.identity);
+                Instantiate(particleEffect, transform.position, Quaternion.identity); //Particle effect shown when hit
             
-            Destroy(other.gameObject);
+            //Destroys the laser and asteroid 
+            Destroy(other.gameObject); 
             Destroy(gameObject);
         }
     }

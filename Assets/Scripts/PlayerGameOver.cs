@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.SceneManagement; //Loads in the scene
 
 public class PlayerGameOver : MonoBehaviour
 {
@@ -12,10 +12,11 @@ public class PlayerGameOver : MonoBehaviour
    //Audio Variable
     void Start()
     {
+        //Audio source component to be placed
         audioSource = GetComponent<AudioSource>();
     }
     
-    //When player dies the game over panel pops up
+    //When player dies the game over panel sets to active and pops up, allowing the player to click the buttons
     void Update()
     {
         if (GameObject.FindGameObjectWithTag("Player") == null)
