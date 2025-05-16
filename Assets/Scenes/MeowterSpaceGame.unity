@@ -1561,11 +1561,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   collectable: {fileID: 1915661428076290534, guid: e2420499ada882545ae3dddb9231cb2b, type: 3}
-  maxX: 1
+  maxX: 3
   maxY: 3
   minX: 3
   minY: -4
-  TimeBetweenSpawn: 4
+  TimeBetweenSpawn: 2
 --- !u!1 &905668155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1784,7 @@ MonoBehaviour:
   maxY: 5
   minX: 4.4
   minY: -5
-  TimeBetweenSpawn: 2
+  TimeBetweenSpawn: 1
 --- !u!4 &1029854958
 Transform:
   m_ObjectHideFlags: 0
@@ -3376,6 +3376,7 @@ GameObject:
   - component: {fileID: 1660660582}
   - component: {fileID: 1660660583}
   - component: {fileID: 1660660584}
+  - component: {fileID: 1660660585}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -3542,6 +3543,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseGamePanel: {fileID: 631769135}
+--- !u!114 &1660660585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660660578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6adc51e2ce2eb4cafee7a2a71e84c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGameOver: 0
 --- !u!1 &1664020015
 GameObject:
   m_ObjectHideFlags: 0

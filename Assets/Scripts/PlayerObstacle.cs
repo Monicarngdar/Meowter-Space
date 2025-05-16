@@ -16,6 +16,8 @@ public class PlayerObstacle : MonoBehaviour
    
     void Update()
     {
+        if(GameManager.Instance.isGameOver) return; //Freezes the collectable in the background when player is game over
+        
         //Checks if the time is spawned
         if (Time.time > SpawnTime)
         {

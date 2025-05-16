@@ -19,9 +19,11 @@ public class PlayerGameOver : MonoBehaviour
     //When player dies the game over panel sets to active and pops up, allowing the player to click the buttons
     void Update()
     {
-        if (GameObject.FindGameObjectWithTag("Player") == null)
+        //Ensures that the player is destroyed 
+        if (GameObject.FindGameObjectWithTag("Player") == null && !GameManager.Instance.isGameOver) 
         {
-            gameOverPanel.SetActive(true);
+            GameManager.Instance.GameOver(); //Game Manager script is set to Game Over
+            gameOverPanel.SetActive(true); //Game over panel is shown
         }
     }
 
@@ -29,14 +31,16 @@ public class PlayerGameOver : MonoBehaviour
     public void Restart()
     {
         audioSource.PlayOneShot(buttonClickSound);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //Loads back to the game scene
     }
 
     //Goes back to main menu
     public void MainMenu()
     { 
         audioSource.PlayOneShot(buttonClickSound);
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu"); //Loads back to main menu scene
     }
     
 }
