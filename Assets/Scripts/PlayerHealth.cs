@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
    //Animation Variable for the hurt animation
    private Animator animator;
 
-   //Audio Variable
+   //Audio Variables
    [Header("Audio")]
    public AudioClip healthDamageSound;
    private AudioSource audioSource;
@@ -29,27 +29,27 @@ public class PlayerHealth : MonoBehaviour
          audioSource = gameObject.AddComponent<AudioSource>(); //Gets the audio source component
       }
       
-      health = 3; //Player health initial to 3
+      health = 3; //Player health sets initial to 3
    }
    
-   //This method calls te collider when it is triggered that is attached to the object
+   //This method calls the collider when it is triggered that is attached to the object
    private void OnTriggerEnter(Collider other)
    {
       if (other.tag == "Asteroid")
       {
-         TakeDamage(1);
+         TakeDamage(1); //Player takes one damage
       }
    }
   //Detects when the player is collided
    void OnCollisionEnter2D(Collision2D other)
    {
-      if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+      if (other.gameObject.layer == LayerMask.NameToLayer("Enemy")) //Finds the layer called ''Enemy''
       {
          StartCoroutine(PlayerHurt()); //Player animation starts when the player gets hit by an obstacle
       }
    }
    
-   //applies damage to the player
+   //Applies damage to the player
  public void TakeDamage(int amount)
    {
       health -= amount; //Decrease amount of health
@@ -62,8 +62,8 @@ public class PlayerHealth : MonoBehaviour
          audioSource.PlayOneShot(healthDamageSound); //Sound effect
       }
 
-      
-      if (health == 0) //if health zero, it destroys the player
+      //if health zero, it destroys the player
+      if (health == 0) 
       {
          Destroy(gameObject);
       }

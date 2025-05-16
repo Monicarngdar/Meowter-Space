@@ -2,16 +2,16 @@ using UnityEngine;
 
 public class LaserShoots : MonoBehaviour
 {
-    //Speed of the laser 
+    //Speed of the laser when the player clicks the space key
     [Header("Laser Speed")]
     public float speed;
     private Rigidbody2D rb;
 
-    //Particle Effect
+    //Particle Effect 
     [Header("Particle")]
     public GameObject particleEffect;
     
-    //Audio Variables
+    //Audio Variables 
     [Header("Audio")]
     public AudioClip hitFireSound;
     private AudioSource audioSource;
@@ -30,12 +30,12 @@ public class LaserShoots : MonoBehaviour
         if (other.CompareTag("Asteroid")) //If the asteroid has a tag 
         {
             if (hitFireSound != null)
-                AudioSource.PlayClipAtPoint(hitFireSound, transform.position); //Audio played when hit
+                AudioSource.PlayClipAtPoint(hitFireSound, transform.position); //Audio played when the laser hits the asteroid
 
             if (particleEffect != null)
-                Instantiate(particleEffect, transform.position, Quaternion.identity); //Particle effect shown when hit
+                Instantiate(particleEffect, transform.position, Quaternion.identity); //Particle effect is shown
             
-            //Destroys the laser and asteroid 
+            //Destroys the laser and asteroid game objects
             Destroy(other.gameObject); 
             Destroy(gameObject);
         }

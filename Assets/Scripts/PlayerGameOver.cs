@@ -9,7 +9,7 @@ public class PlayerGameOver : MonoBehaviour
     public AudioClip buttonClickSound;
     private AudioSource audioSource;
 
-   //Audio Variable
+   //Audio Variables
     void Start()
     {
         //Audio source component to be placed

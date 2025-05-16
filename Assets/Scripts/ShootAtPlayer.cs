@@ -13,4 +13,10 @@ public class ShootAtPlayer : MonoBehaviour
       rb.linearVelocityX = speed;
    }
    
+   //Reference to the Speed Manager Script
+   void Update()
+   {
+      transform.position += Vector3.left * SpeedManager.Instance.gameSpeed * Time.deltaTime;
+   }
+   
 }
