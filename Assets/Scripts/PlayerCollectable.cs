@@ -32,7 +32,7 @@ public class PlayerCollectable : MonoBehaviour
         float X = Random.Range(minX, maxX);
         float Y = Random.Range(minY, maxY);
         
-        Instantiate(collectable, transform.position + new Vector3(X,Y, 0), transform.rotation);
+        Instantiate(collectable, transform.position + new Vector3(X,Y, 0f), transform.rotation);
     }
     
 }

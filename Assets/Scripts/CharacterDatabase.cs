@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class CharacterDatabase : ScriptableObject
+public class CharacterDatabase : ScriptableObject //To store the list of the cat characters data 
 {
     //To assign the characters
     public CatCharacter[] character;
