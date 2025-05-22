@@ -73,7 +73,7 @@ public class PlayerHealth : MonoBehaviour
       }
    }
 
-  //Updates the heart icons 
+  //Updates the heart icons
    private void UpdatedHearts()
    {
       for (int i = 0; i < hearts.Length; i++)

@@ -56,6 +56,5 @@ public class PlayerController : MonoBehaviour
                 audioSource.PlayOneShot(coinSound);
         }
     }
-
-   
+    
 }

@@ -3,8 +3,9 @@ using UnityEngine.SceneManagement; //Loads in the scene
 
 public class PlayerGameOver : MonoBehaviour
 {
-    //Add the game over screen panel
-    public GameObject  gameOverPanel;
+   
+    public GameObject  gameOverPanel;  //Add the game over screen panel
+    public GameObject  pauseButton;  //Add the pause button game object
     
     public AudioClip buttonClickSound;
     private AudioSource audioSource;
@@ -24,6 +25,11 @@ public class PlayerGameOver : MonoBehaviour
         {
             GameManager.Instance.GameOver(); //Game Manager script is set to Game Over
             gameOverPanel.SetActive(true); //Game over panel is shown
+
+            if (pauseButton != null)  //Hides the pause button when player is gameover
+            {
+                pauseButton.SetActive(false);
+            }
         }
     }
 

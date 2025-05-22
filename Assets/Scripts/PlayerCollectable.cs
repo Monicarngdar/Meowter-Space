@@ -4,12 +4,12 @@ public class PlayerCollectable : MonoBehaviour
 {
     //to place the object
     public GameObject collectable;
-    //obstacles spawn in different direction as the gameplay progresses
+    //coins spawn in different direction as the gameplay progresses
     public float maxX;
     public float maxY;
     public float minX;
     public float minY;
-    //The obstacle spawns depending on the time
+    //The coins spawns depending on the time
     public float TimeBetweenSpawn;
     private float SpawnTime;
     
@@ -28,9 +28,9 @@ public class PlayerCollectable : MonoBehaviour
 
     void Spawn()
     {
-        //Randomly spawns the obstacles within the specific range mentioned
+        //Randomly spawns the coins within the specific range mentioned
         float X = Random.Range(minX, maxX);
-        float Y = Random.Range(minY, maxY);
+        float Y = Mathf.Floor(Random.Range(minY, maxY));
         
         Instantiate(collectable, transform.position + new Vector3(X,Y, 0f), transform.rotation);
     }

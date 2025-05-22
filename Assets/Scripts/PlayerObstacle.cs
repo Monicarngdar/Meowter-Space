@@ -9,14 +9,14 @@ public class PlayerObstacle : MonoBehaviour
    public float maxY;
    public float minX;
    public float minY;
-   //The obstacle spawns depending on the time
+   //The obstacles spawns depending on the time
    public float TimeBetweenSpawn; 
    private float SpawnTime;
    
    
     void Update()
     {
-        if(GameManager.Instance.isGameOver) return; //Freezes the collectable in the background when player is game over
+        if(GameManager.Instance.isGameOver) return; //Freezes the obstacles in the background when player is game over
         
         //Checks if the time is spawned
         if (Time.time > SpawnTime)
