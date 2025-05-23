@@ -3518,6 +3518,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 803374931}
   pauseButton: {fileID: 1114597675}
+  laserText: {fileID: 669930661}
   buttonClickSound: {fileID: 8300000, guid: 141b984e459bc422c8c0e500b4f52d92, type: 3}
 --- !u!114 &1660660582
 MonoBehaviour:
