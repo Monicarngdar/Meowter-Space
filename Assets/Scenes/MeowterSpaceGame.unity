@@ -1883,7 +1883,7 @@ MonoBehaviour:
   maxY: 5
   minX: 4.4
   minY: -4.5
-  TimeBetweenSpawn: 3
+  TimeBetweenSpawn: 1.5
 --- !u!4 &1029854958
 Transform:
   m_ObjectHideFlags: 0
@@ -3517,6 +3517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 803374931}
+  pauseButton: {fileID: 1114597675}
   buttonClickSound: {fileID: 8300000, guid: 141b984e459bc422c8c0e500b4f52d92, type: 3}
 --- !u!114 &1660660582
 MonoBehaviour:

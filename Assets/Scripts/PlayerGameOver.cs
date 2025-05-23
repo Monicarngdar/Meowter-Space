@@ -6,6 +6,7 @@ public class PlayerGameOver : MonoBehaviour
    
     public GameObject  gameOverPanel;  //Add the game over screen panel
     public GameObject  pauseButton;  //Add the pause button game object
+    public GameObject laserText; //Add the laser text game object
     
     public AudioClip buttonClickSound;
     private AudioSource audioSource;
@@ -26,9 +27,14 @@ public class PlayerGameOver : MonoBehaviour
             GameManager.Instance.GameOver(); //Game Manager script is set to Game Over
             gameOverPanel.SetActive(true); //Game over panel is shown
 
-            if (pauseButton != null)  //Hides the pause button when player is gameover
+            if (pauseButton != null)  //Hides the pause button when player is game over
             {
                 pauseButton.SetActive(false);
+            }
+
+            if (laserText != null) //Hides the laser text reloading when player is game over
+            {
+                laserText.SetActive(false);
             }
         }
     }
